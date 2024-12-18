@@ -17,7 +17,7 @@ j'ai implémenté :
 - Données mooké
 - utilisation de repository et de viewModelx
 
-#Archtecture de l'application 
+# Archtecture de l'application 
 ```
 └── Wellan21-EvaluationAndroid
     └── app

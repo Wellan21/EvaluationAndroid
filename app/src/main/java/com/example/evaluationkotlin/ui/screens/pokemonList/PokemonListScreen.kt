@@ -1,6 +1,5 @@
 package com.example.evaluationkotlin.ui.screens.pokemonList
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -35,20 +34,26 @@ import com.example.evaluationkotlin.nativeManagement.VibrationManager
 import com.example.evaluationkotlin.nativeManagement.playBeeb
 import com.example.evaluationkotlin.ui.screens.pokemon.PokemonListViewModel
 
+///Ecran permettant de lister les pokemons
 @Composable
 fun PokemonListScreen(navController: NavHostController) {
+// Appel du viewModel et récuperation des pokemons.
     val viewModel: PokemonListViewModel = viewModel()
     val pokemons by viewModel.pokemonList.collectAsState()
+
+    //Box permettant de mettre un background
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(colorResource(R.color.background))
     ) {
+        //Colonne permettant d'afficher les differents pokemons
         LazyColumn(
             modifier = Modifier
                 .padding(vertical = 30.dp, horizontal = 10.dp)
                 .fillMaxSize()
         ) {
+            //Liste les pokemons de la liste un a un et appelle la composable PokemonCard
             items(pokemons)
             { pokemon ->
                 PokemonCard(pokemon = pokemon, navController = navController)
@@ -59,7 +64,7 @@ fun PokemonListScreen(navController: NavHostController) {
     }
 }
 
-@SuppressLint("NewApi")
+///Composable représentant un pokemon
 @Composable
 fun PokemonCard(pokemon: Pokemon, navController: NavHostController) {
     val mContext = LocalContext.current
@@ -68,7 +73,7 @@ fun PokemonCard(pokemon: Pokemon, navController: NavHostController) {
         Modifier
             .padding(8.dp)
             .fillMaxWidth()
-
+            // Au clic de l'utilisateur sur la carte on joue un son et  on fait vibrer le telephone et on navigue
             .clickable {
                 playBeeb(mContext)
                 vibrationManager.vibratePhone()
@@ -77,6 +82,7 @@ fun PokemonCard(pokemon: Pokemon, navController: NavHostController) {
         colors = cardColors(colorResource(R.color.card)),
         elevation = cardElevation(defaultElevation = 10.dp),
     ) {
+        //Ligne contenant l'image du pokemon et les informations
         Row(modifier = Modifier) {
             AsyncImage(
                 modifier = Modifier.size(50.dp),
@@ -84,7 +90,7 @@ fun PokemonCard(pokemon: Pokemon, navController: NavHostController) {
                 contentDescription = null
 
             )
-
+            //Colonne contenant les informations
             Column {
                 Text(
                     text = pokemon.name.fr + stringResource(R.string.hastag) + pokemon.pokedex_id.toString(),

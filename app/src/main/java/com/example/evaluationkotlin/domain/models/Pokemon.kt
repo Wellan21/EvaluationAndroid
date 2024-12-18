@@ -172,14 +172,14 @@ data class Pokemon(
     val stats: Stats,
 )
 
-/* Enum des differents nom des pokemons */
+/* Classe représentant les differents nom des pokemons */
 public  class Name(
     val fr: String,
     val en: String,
     val jp: String
 
 )
-/*Enum des differents sprites du pokemons*/
+/*Classe représentant differents sprites du pokemons*/
 
 public  class Sprites(
     val regular: String,
@@ -188,14 +188,14 @@ public  class Sprites(
 
 )
 
-/*Représente differents types du pokemon */
+/*RClasse représentant les types du pokemon */
 public  class Type(
     val name: String,
     val image: String
 
 )
 
-
+//Classe représentant les stats du pokemon
 public class Stats(
     val hp: Int,
     val atk: Int,

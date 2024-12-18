@@ -4,11 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -23,14 +21,15 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
-            Modifier.background(colorResource(R.color.background))
             EvaluationKotlinTheme {
-               NavHost (
+               // Navhost ayant comme route de depart pokemonlist
+                NavHost (
                    navController = navController,
                    startDestination = "pokemonList"
 
                )
                {
+                    /// Definition de la route PokemonList
                    composable(
                        route = "pokemonList") {
                        PokemonListScreen(
@@ -38,6 +37,7 @@ class MainActivity : ComponentActivity() {
                             )
 
                    }
+                   /// Definition de la route Pokemon passant un paramètre id.
                    composable(
                        route = "pokemon/{id}"
                    ) { backStackEntry ->

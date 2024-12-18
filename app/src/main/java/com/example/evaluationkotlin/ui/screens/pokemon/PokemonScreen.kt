@@ -27,21 +27,25 @@ import coil.compose.AsyncImage
 import com.example.evaluationkotlin.R
 import com.example.evaluationkotlin.domain.models.Pokemon
 
+//Ecran represantant un pokemon
 @Composable
 fun PokemonScreen(modifier: Modifier, id: Int, navController: NavHostController) {
-
+    // Appel du viewModel et recuperation du pokemon.
     val viewModel: PokemonScreenViewModel = viewModel()
     val pokemon by viewModel.pokemon.collectAsState()
+
+// Box permettant d'ajouter un background
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(colorResource(R.color.background))
     ) {
+        // Appel du composable pokemonCard
         pokemonCard(pokemon = pokemon, modifier = modifier)
     }
 
 }
-
+// Composant contenant une carte représentant un pokémon. 
 @Composable
 fun pokemonCard(pokemon: Pokemon, modifier: Modifier) {
     ElevatedCard(
@@ -52,6 +56,8 @@ fun pokemonCard(pokemon: Pokemon, modifier: Modifier) {
         elevation = cardElevation(defaultElevation = 10.dp)
     ) {
 
+        //Affichage des images côte a côte
+
         Row {
 
             AsyncImage(
@@ -60,12 +66,15 @@ fun pokemonCard(pokemon: Pokemon, modifier: Modifier) {
                 contentDescription = null
 
             )
+
             AsyncImage(
                 modifier = Modifier,
                 model = pokemon.sprites.shiny,
                 contentDescription = null
             )
         }
+        //Colone contenant les informations
+
         Column(Modifier.padding(16.dp)) {
             Text(
                 text = "${stringResource(R.string.NomFr)} ${pokemon.name.fr}",
@@ -131,7 +140,7 @@ fun pokemonCard(pokemon: Pokemon, modifier: Modifier) {
     }
 }
 
-
+// Preview de l'écran.
 @Preview
 @Composable
 private fun PokemonScreenPreview(modifier: Modifier = Modifier) {

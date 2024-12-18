@@ -9,12 +9,13 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
+// ViewModel pour la liste des pokémons
 class PokemonListViewModel (): ViewModel() {
-    private val pokemonRepository = PokemonRepository()
+
 
     private val _pokemonList = MutableStateFlow<List<Pokemon>>(listOf())
     val pokemonList : StateFlow<List<Pokemon>> = _pokemonList
-
+//Recupere la liste des pokemons a l'initialisation du viewModel
     init {
 
         viewModelScope.launch(
@@ -29,7 +30,7 @@ class PokemonListViewModel (): ViewModel() {
 }
 
 
-
+// Recupere la liste des pokemons depuis le repository
 suspend fun getPokemonList(): List<Pokemon> {
 
     val pokemonRepository = PokemonRepository()

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Evaluation Kotlin</string>
+    <string name="hastag">#</string>
+    <string name="Type"> Type : </string>
+    <string name="NomFr">Nom : </string>
+    <string name="NomEn">Nom anglais : </string>
+    <string name="NomJp"> Nom Japonnais : </string>
+    <string name="IdPokedex">N° pokedex</string>
+    <string name="Generation">Géneration</string>
+    <string name="Categorie">Catégorie :</string>
+    <string name="HP">PV :</string>
+    <string name="ATK">Attaque :</string>
+    <string name="DEF">Défense :</string>
+    <string name="SPE_ATK">Attaque Spécial :</string>
+    <string name="SPE_DEF">Défense Spéciale :</string>
+
+</resources>

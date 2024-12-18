@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Blood">#A81313</color>
+    <color name="DarkCharcoal">#302c34</color>
+    <color name="background">@color/Blood</color>
+    <color name="Text">@color/white</color>
+    <color name="card">@color/DarkCharcoal</color>
+</resources>

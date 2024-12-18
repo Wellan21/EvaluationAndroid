@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Evaluation Kotlin</string>
+    <string name="hastag">#</string>
+    <string name="Type"> Type : </string>
+    <string name="NomFr">French Name : </string>
+    <string name="NomEn">Name : </string>
+    <string name="NomJp">Japanese Name : </string>
+    <string name="IdPokedex">Pokedex Number</string>
+    <string name="Generation">Generation</string>
+    <string name="Categorie">Categorie :</string>
+    <string name="HP">HP :</string>
+    <string name="ATK">ATK :</string>
+    <string name="DEF">DEF :</string>
+    <string name="SPE_ATK">SPE_ATK :</string>
+    <string name="SPE_DEF">SPE_DEF :</string>
+
+</resources>
